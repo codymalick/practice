@@ -1,18 +1,9 @@
+mod algorithms;
+
 extern crate rand;
 
-fn selection_sort(mut vec: Vec<u32>) -> Vec<u32> {
-    println!("Beginning Selection Sort...");
-    for i in 0..vec.len() {
-        let mut min = i;
-        for j in i..vec.len() {
-            if vec[j] < vec[min] {
-                min = j
-            }
-        }
-        vec.swap(i,min);
-    }
-    vec
-}
+use algorithms::selection;
+
 
 fn main() {
     println!("Rust - Sorting");
@@ -26,6 +17,6 @@ fn main() {
 
     println!("{:?}",vec);
 
-    vec = selection_sort(vec);
+    vec = selection::selection_sort(vec);
     println!("{:?}",vec);
 }
