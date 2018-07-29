@@ -1,9 +1,10 @@
-"""Simple tree implementation, builds unbalanced binary tree from random values.
+"""Simple unbalanced binary search tree implementation.
 
 Also contains basic pre-order, in-order, and post-order traversal functions.
 """
 import random
 
+ORDERED_ARRAY = [0, 1, 2, 3, 4, 5, 6]
 
 class Node():
     def __init__(self, value, left=None, right=None, parent=None):
@@ -83,6 +84,7 @@ def postorder_traversal(root):
 
 
 def main():
+    # array = ORDERED_ARRAY
     array = generate_array()
     print(array)
 
