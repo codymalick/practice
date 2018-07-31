@@ -7,7 +7,7 @@ Example: Given an input of [2,3,6,7,9,23], n = 6, and two values (2, 6), return 
 If one of the values does not exist in the tree, return None
 
 A caviat to this problem was that I was asked not to write additional functions. I'm going to in my solution here
-becuase that's a somewhat insane requirement.
+because that's a somewhat insane requirement.
 """
 INPUT_ARRAY = [2, 3, 6, 7, 9, 23]
 
@@ -23,7 +23,7 @@ def main(array, n, val1, val2):
 
 
 class Node():
-    def __init__(self, value, left=None, right=None, parent=None):
+    def __init__(self, value, left=None, right=None):
         self.value = value
         self.left = left
         self.right = right
@@ -44,7 +44,7 @@ def build_tree(array, n):
         while True:
             if x < current_node.value:
                 if current_node.left is None:
-                    current_node.left = Node(x, parent=current_node)
+                    current_node.left = Node(x)
                     break
                 else:
                     current_node = current_node.left
@@ -52,7 +52,7 @@ def build_tree(array, n):
             # >= here is for good form due to the uniqueness of the integers
             if x >= current_node.value:
                 if current_node.right is None:
-                    current_node.right = Node(x, parent=current_node)
+                    current_node.right = Node(x)
                     break
                 else:
                     current_node = current_node.right
